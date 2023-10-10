@@ -1,0 +1,5 @@
+11:28:30: Adding line: "Først linjer boys"
+11:28:34: Adding line: "Anden linje boys"
+11:28:39: Adding line: "tredje linje boys"
+11:28:48: Deleting line #3: "11:28:39: Adding line: "tredje linje boys""
+11:29:05: Adding line: "Det her er 4 linje, fordi jeg testede og slettede linje 3 - Tjek"
