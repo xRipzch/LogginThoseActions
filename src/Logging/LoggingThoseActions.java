@@ -48,7 +48,7 @@ public class LoggingThoseActions {
 
         // Get the current timestamp
         LocalDateTime currentTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss"); //format to readablity
         String timestamp = currentTime.format(formatter);
 
         String logEntry = timestamp + ": Adding line: \"" + newLine + "\"";
@@ -66,7 +66,7 @@ public class LoggingThoseActions {
     private void deleteLine() {
         System.out.println("Enter the index of the line to delete: ");
         int indexToDelete = sc.nextInt();
-        sc.nextLine();  //SBW
+        sc.nextLine();  //ScannerbugWorkaround
 
         if (indexToDelete >= 0 && indexToDelete < lines.size()) {
             String deletedLine = lines.remove(indexToDelete);
