@@ -1,6 +1,5 @@
 package Logging;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
@@ -11,8 +10,8 @@ import java.time.format.DateTimeFormatter;
 
 public class LoggingThoseActions {
 
-    private ArrayList<String> lines = new ArrayList<>();
-    private Scanner sc = new Scanner(System.in);
+    private final ArrayList<String> lines = new ArrayList<>();
+    private final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         new LoggingThoseActions().run();
@@ -32,7 +31,7 @@ public class LoggingThoseActions {
         System.out.println("Enter your choice: ");
 
         int choice = sc.nextInt();
-        sc.nextLine();  // Consume the newline character
+        sc.nextLine();  //scannerBugWorkaround
 
         switch (choice) {
             case 1 -> addLine();
@@ -59,8 +58,8 @@ public class LoggingThoseActions {
     }
 
     private void viewLines() {
-        for (int i = 0; i < lines.size(); i++) {
-            System.out.println(lines.get(i));
+        for (String line : lines) {
+            System.out.println(line);
         }
     }
 
@@ -81,7 +80,7 @@ public class LoggingThoseActions {
 
     private void logAction(String logEntry) {
         try {
-            PrintStream ps = new PrintStream(new FileOutputStream(new File("Logging//Logs.txt"), true));  // Append to the file
+            PrintStream ps = new PrintStream(new FileOutputStream(("Logging//Logs.txt"), true));  // Append to the file
             ps.println(logEntry);
             ps.close();
         } catch (FileNotFoundException e) {
